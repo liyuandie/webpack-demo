@@ -1,21 +1,16 @@
 import _ from 'lodash'
-import './style.css'
-import MyImg from './banner_1.png'
-import Data from './data.xml'
+import printMe from './print.js'
 
 function component() {
   const element = document.createElement('div')
+  const btn = document.createElement('button')
 
   element.innerHTML = _.join(['Hello', 'webpack'], ' ')
-  element.classList.add('hello')
 
-  //添加图片
-  var myImg = new Image()
-  myImg.src = MyImg
+  btn.innerHTML = 'Click me and check the console!'
+  btn.onclick = printMe
 
-  element.appendChild(myImg)
-
-  console.log(Data)
+  element.appendChild(btn)
 
   return element
 }
